@@ -2,8 +2,8 @@ package samplearrays;
 
 public class DogShelter {
 
-    // initialize an array of 3
-
+    // Initialize a static Array of Integer called dogCounts[cite: 12]
+    static Integer[] dogCounts = new Integer[3];
 
     public static void main(String[] args) {
 
@@ -29,19 +29,30 @@ public class DogShelter {
 
     // Add count to a given index
     public static void addBreed(int index, int count) {
-        // add you code here
+        // Ensure index is within array bounds and avoid NullPointerException[cite: 12]
+        if (index >= 0 && index < dogCounts.length) {
+            if (dogCounts[index] == null) {
+                dogCounts[index] = count;
+            } else {
+                dogCounts[index] += count;
+            }
+        }
     }
 
     // Remove a breed by setting its count to 0
     public static void deleteBreed(int index) {
-        // add your code here
+        // Ensure the program operates as expected without out-of-bounds errors[cite: 12]
+        if (index >= 0 && index < dogCounts.length) {
+            dogCounts[index] = 0;
+        }
     }
 
     // Display all dog counts
     public static void displayDogs() {
-        // add your code
-          //  System.out.println("Breed " + i + " has " + dogCounts[i] + " dogs.");
-
+        for (int i = 0; i < dogCounts.length; i++) {
+            // Treat null elements as 0 to prevent printing "null"
+            int currentCount = (dogCounts[i] == null) ? 0 : dogCounts[i];
+            System.out.println("Breed " + i + " has " + currentCount + " dogs.");
+        }
     }
 }
-
