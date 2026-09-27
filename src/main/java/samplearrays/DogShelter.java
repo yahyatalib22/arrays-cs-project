@@ -2,7 +2,7 @@ package samplearrays;
 
 public class DogShelter {
 
-    // Initialize a static Array of Integer called dogCounts[cite: 12]
+    // Initialize a static Array of Integer called dogCounts
     static Integer[] dogCounts = new Integer[3];
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class DogShelter {
 
     // Add count to a given index
     public static void addBreed(int index, int count) {
-        // Ensure index is within array bounds and avoid NullPointerException[cite: 12]
+        // Ensure index is within array bounds and avoid NullPointerException
         if (index >= 0 && index < dogCounts.length) {
             if (dogCounts[index] == null) {
                 dogCounts[index] = count;
@@ -41,7 +41,7 @@ public class DogShelter {
 
     // Remove a breed by setting its count to 0
     public static void deleteBreed(int index) {
-        // Ensure the program operates as expected without out-of-bounds errors[cite: 12]
+        // Ensure the program operates as expected without out-of-bounds errors
         if (index >= 0 && index < dogCounts.length) {
             dogCounts[index] = 0;
         }
